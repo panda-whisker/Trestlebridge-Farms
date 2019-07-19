@@ -45,11 +45,15 @@ namespace Trestlebridge
                 {
                     DisplayBanner();
                     CreateFacility.CollectInput(Trestlebridge);
+                    Console.WriteLine("Press return key to go back to main menu.");
+                    Console.ReadLine();
                 }
                 else if (option == "2")
                 {
                     DisplayBanner();
                     PurchaseStock.CollectInput(Trestlebridge);
+                    Console.WriteLine("Press return key to go back to main menu.");
+                    Console.ReadLine();
                 }
                 else if (option == "4")
                 {

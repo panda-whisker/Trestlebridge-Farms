@@ -30,6 +30,8 @@ namespace Trestlebridge.Models
         public void AddGrazingField (GrazingField field)
         {
             GrazingFields.Add(field);
+            // Confirmation 
+            System.Console.WriteLine($"{field} has been added");
         }
 
         public override string ToString()
