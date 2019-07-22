@@ -26,8 +26,12 @@ namespace Trestlebridge.Models
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
                 case "Chicken":
-                    ChickenHouses[index].AddResource((IMeatProducing)resource);
+                    ChickenHouses[index].AddResource((IHousable)resource);
                     break;
+                case "Duck":
+                    ChickenHouses[index].AddResource((IHousable)resource);
+                    break;
+                    
                 default:
                     break;
             }
