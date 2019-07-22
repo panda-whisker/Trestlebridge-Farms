@@ -11,6 +11,15 @@ namespace Trestlebridge.Models.Facilities
         private int _capacity = 50;
         private Guid _id = Guid.NewGuid();
 
+        public string id
+        {
+            get
+            {
+                string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
+                return shortId;
+            }
+        }
+
         private List<IHousable> _animals = new List<IHousable>();
 
         public double Capacity
