@@ -6,15 +6,15 @@ using Trestlebridge.Models.Animals;
 
 namespace Trestlebridge.Actions
 {
-    public class ChooseGrazingField
+    public class ChooseChickenHouse
     {
-        public static void CollectInput(Farm farm, IGrazing animal)
+        public static void CollectInput(Farm farm, IMeatProducing animal)
         {
             Console.Clear();
 
-            for (int i = 0; i < farm.GrazingFields.Count; i++)
+            for (int i = 0; i < farm.ChickenHouses.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Grazing Field {farm.GrazingFields[i].id}");
+                Console.WriteLine($"{i + 1}. Grazing Field {farm.ChickenHouses[i].id}");
             }
 
             Console.WriteLine();
@@ -24,15 +24,8 @@ namespace Trestlebridge.Actions
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
-            try
-            {
-                farm.GrazingFields[choice - 1].AddResource(animal);
-            }
-            catch
-            {
-                Console.WriteLine("Please press return and choose a different facility");
-            }
 
+            farm.ChickenHouses[choice - 1].AddResource(animal);
 
             /*
                 Couldn't get this to work. Can you?
