@@ -12,16 +12,19 @@ namespace Trestlebridge.Actions {
             Console.WriteLine ("3. Chicken");
             Console.WriteLine ("2. Duck");
 
-            Console.WriteLine ();
-            Console.WriteLine ("What are you buying today?");
+            Console.WriteLine();
+            Console.WriteLine("What are you buying today?");
 
-            Console.Write ("> ");
-            string choice = Console.ReadLine ();
+            Console.Write("> ");
+            string choice = Console.ReadLine();
 
             switch (Int32.Parse(choice))
             {
                 case 1:
                     ChooseGrazingField.CollectInput(farm, new Cow());
+                    break;
+                case 2:
+                    ChooseGrazingField.CollectInput(farm, new Ostrich());
                     break;
                 default:
                     break;

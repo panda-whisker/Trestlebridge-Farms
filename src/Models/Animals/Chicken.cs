@@ -8,10 +8,7 @@ namespace Trestlebridge.Models.Animals
     {
 
         private Guid _id = Guid.NewGuid();
-        private int _eggProduced = 6;
-        private double _featherProduced = 0.75;
-
-
+        private double _meatProduced = 7.25;
 
         private string _shortId
         {
@@ -21,28 +18,23 @@ namespace Trestlebridge.Models.Animals
             }
         }
 
-        public double FeedPerDay { get; set; } = 0.8;
+        public double FeedPerDay { get; set; } = 5.4;
         public string Type { get; } = "Chicken";
 
         // Methods
         public void Eat()
         {
-            Console.WriteLine($"Chicken {this._shortId} just ate {this.FeedPerDay}kg of grass");
-        }
-
-        // public double Butcher()
-        // {
-        //     return _feedProduced;
-        // }
-
-        public override string ToString()
-        {
-            return $"Duck {this._shortId}. kwaaaaak!";
+            Console.WriteLine($"Chicken {this._shortId} just ate {this.FeedPerDay}kg of feed");
         }
 
         public double Butcher()
         {
-            throw new NotImplementedException();
+            return _meatProduced;
+        }
+
+        public override string ToString()
+        {
+            return $"Chicken {this._shortId}. Bawk!";
         }
     }
 }
