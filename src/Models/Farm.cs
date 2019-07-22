@@ -45,7 +45,7 @@ namespace Trestlebridge.Models
         }
         public void AddDuckHouse(DuckHouse field)
         {
-            
+            DuckHouses.Add(field);
             // Confirmation 
             System.Console.WriteLine($"{field} has been added");
         }
