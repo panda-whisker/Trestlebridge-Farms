@@ -20,24 +20,32 @@ namespace Trestlebridge.Actions
             Console.Write("> ");
             string input = Console.ReadLine();
 
-            switch (Int32.Parse(input))
+            try
             {
-                case 1:
-                    farm.AddGrazingField(new GrazingField());
-                    break;
-                case 2:
-                    farm.AddGrazingField(new GrazingField());
-                    break;
-                case 3:
-                    farm.AddDuckHouse(new DuckHouse());
-                    break;
-                case 4:
-                    farm.AddChickenHouse(new ChickenHouse());
-                    break;
+                switch (Int32.Parse(input))
+                {
+                    case 1:
+                        farm.AddGrazingField(new GrazingField());
+                        break;
+                    case 2:
+                        farm.AddGrazingField(new GrazingField());
+                        break;
+                    case 3:
+                        farm.AddDuckHouse(new DuckHouse());
+                        break;
+                    case 4:
+                        farm.AddChickenHouse(new ChickenHouse());
+                        break;
 
 
-                default:
-                    break;
+                    default:
+                        break;
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Please select an available facility option");
+                CreateFacility.CollectInput(farm);
             }
         }
     }
