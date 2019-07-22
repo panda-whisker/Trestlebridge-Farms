@@ -4,30 +4,53 @@ using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 
 
-namespace Trestlebridge.Models.Facilities {
+namespace Trestlebridge.Models.Facilities
+{
     public class GrazingField : IFacility<IGrazing>
     {
         private int _capacity = 50;
         private Guid _id = Guid.NewGuid();
 
-        private List<IGrazing> _animals = new List<IGrazing>();
+        public string id
+        {
+            get
+            {
+                string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
+                return shortId;
+            }
+        }
 
-        public double Capacity {
-            get {
+        private List<IGrazing> _animals = new List<IGrazing>()
+        {
+
+        };
+
+        public double Capacity
+        {
+            get
+            {
                 return _capacity;
             }
         }
 
-        public void AddResource (IGrazing animal)
+        public void AddResource(IGrazing animal)
         {
-            // TODO: implement this...
-            throw new NotImplementedException();
+            // Add animal to List or return user to facility list in terminal
+            try
+            {
+                _animals.Add(animal);
+            }
+            catch
+            {
+                Console.WriteLine("Press return to choose a different facility");
+            }
         }
 
-        public void AddResource (List<IGrazing> animals) 
+        public void AddResource(List<IGrazing> animals)
         {
             // TODO: implement this...
-            throw new NotImplementedException();
+
+            // throw new NotImplementedException();
         }
 
         public override string ToString()
