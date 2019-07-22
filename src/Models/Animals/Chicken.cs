@@ -4,7 +4,7 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Animals
 {
-    public class Duck : IResource, IHousable
+    public class Chicken : IResource, IHousable
     {
 
         private Guid _id = Guid.NewGuid();
@@ -27,7 +27,7 @@ namespace Trestlebridge.Models.Animals
         // Methods
         public void Eat()
         {
-            Console.WriteLine($"Duck {this._shortId} just ate {this.FeedPerDay}kg of grass");
+            Console.WriteLine($"Chicken {this._shortId} just ate {this.FeedPerDay}kg of grass");
         }
 
         // public double Butcher()
@@ -39,5 +39,7 @@ namespace Trestlebridge.Models.Animals
         {
             return $"Duck {this._shortId}. kwaaaaak!";
         }
+
+       
     }
 }
