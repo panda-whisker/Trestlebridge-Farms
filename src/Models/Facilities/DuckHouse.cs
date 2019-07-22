@@ -24,13 +24,12 @@ namespace Trestlebridge.Models.Facilities
         public void AddResource(IHousable animal)
         {
             // TODO: implement this...
-            throw new NotImplementedException();
+            _animals.Add(animal);
         }
 
         public void AddResource(List<IHousable> animals)
         {
             // TODO: implement this...
-            throw new NotImplementedException();
         }
 
         public override string ToString()
