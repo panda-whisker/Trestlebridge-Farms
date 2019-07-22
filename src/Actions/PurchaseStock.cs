@@ -40,6 +40,7 @@ namespace Trestlebridge.Actions
             }
             catch (FormatException)
             {
+                Console.Clear();
                 Console.WriteLine("Please select an available stock option");
                 PurchaseStock.CollectInput(farm);
             }
