@@ -9,6 +9,8 @@ namespace Trestlebridge.Actions {
         public static void CollectInput (Farm farm) {
             Console.WriteLine ("1. Cow");
             Console.WriteLine ("2. Ostrich");
+            Console.WriteLine ("3. Chicken");
+            Console.WriteLine ("2. Duck");
 
             Console.WriteLine ();
             Console.WriteLine ("What are you buying today?");
