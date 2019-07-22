@@ -4,15 +4,13 @@ using Trestlebridge.Models;
 using Trestlebridge.Models.Animals;
 using Trestlebridge.Models.Facilities;
 
-namespace Trestlebridge.Actions
-{
-    public class PurchaseStock
-    {
-        public static void CollectInput(Farm farm)
-        {
-            Console.WriteLine("1. Cow");
-            Console.WriteLine("2. Ostrich");
-            Console.WriteLine("3. Chicken");
+namespace Trestlebridge.Actions {
+    public class PurchaseStock {
+        public static void CollectInput (Farm farm) {
+            Console.WriteLine ("1. Cow");
+            Console.WriteLine ("2. Ostrich");
+            Console.WriteLine ("3. Chicken");
+            Console.WriteLine ("4. Duck");
 
             Console.WriteLine();
             Console.WriteLine("What are you buying today?");

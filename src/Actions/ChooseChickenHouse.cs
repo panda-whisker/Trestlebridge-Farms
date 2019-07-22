@@ -8,13 +8,13 @@ namespace Trestlebridge.Actions
 {
     public class ChooseChickenHouse
     {
-        public static void CollectInput(Farm farm, IMeatProducing animal)
+        public static void CollectInput(Farm farm, IHousable animal)
         {
             Console.Clear();
 
             for (int i = 0; i < farm.ChickenHouses.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Grazing Field {farm.ChickenHouses[i].id}");
+                Console.WriteLine($"{i + 1}. Chicken House {farm.ChickenHouses[i].id}");
             }
 
             Console.WriteLine();
