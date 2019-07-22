@@ -34,6 +34,9 @@ namespace Trestlebridge.Actions
                     case 3:
                         ChooseChickenHouse.CollectInput(farm, new Chicken());
                         break;
+                    case 4:
+                        ChooseDuckHouse.CollectInput(farm, new Duck());
+                        break;    
                     default:
                         break;
                 }
