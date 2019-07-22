@@ -33,6 +33,7 @@ namespace Trestlebridge.Actions
                 Console.WriteLine("Please press return and choose a different facility");
             }
 
+            farm.GrazingFields[choice - 1].AddResource(animal);
 
             /*
                 Couldn't get this to work. Can you?

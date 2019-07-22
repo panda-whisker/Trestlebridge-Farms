@@ -9,6 +9,7 @@ namespace Trestlebridge.Models
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
+        public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
 
         public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
 
@@ -38,6 +39,12 @@ namespace Trestlebridge.Models
             // Confirmation 
             System.Console.WriteLine($"{field} has been added");
         }
+        public void AddDuckHouse(DuckHouse field)
+        {
+            
+            // Confirmation 
+            System.Console.WriteLine($"{field} has been added");
+        }
 
         public void AddChickenHouse(ChickenHouse house)
         {
@@ -51,6 +58,7 @@ namespace Trestlebridge.Models
             StringBuilder report = new StringBuilder();
 
             GrazingFields.ForEach(gf => report.Append(gf));
+            DuckHouses.ForEach(dh => report.Append(dh));
 
             ChickenHouses.ForEach(ch => report.Append(ch));
 
