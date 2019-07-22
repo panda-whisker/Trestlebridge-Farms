@@ -29,7 +29,7 @@ namespace Trestlebridge.Models
                     ChickenHouses[index].AddResource((IHousable)resource);
                     break;
                 case "Duck":
-                    ChickenHouses[index].AddResource((IHousable)resource);
+                    DuckHouses[index].AddResource((IHousable)resource);
                     break;
                     
                 default:
