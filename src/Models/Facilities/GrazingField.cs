@@ -8,6 +8,13 @@ namespace Trestlebridge.Models.Facilities
 {
     public class GrazingField : IFacility<IGrazing>
     {
+        public int AnimalCount
+        {
+            get
+            {
+                return _animals.Count;
+            }
+        }
         private int _capacity = 50;
         private Guid _id = Guid.NewGuid();
 
