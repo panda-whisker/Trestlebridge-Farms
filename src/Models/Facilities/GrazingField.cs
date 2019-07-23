@@ -7,7 +7,7 @@ namespace Trestlebridge.Models.Facilities
 {
     public class GrazingField : IFacility<IGrazing>
     {
-        public double Capacity { get; } = 5;
+        public double Capacity { get; } = 2;
         private Guid _id = Guid.NewGuid();
         public string id
         {

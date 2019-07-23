@@ -21,7 +21,10 @@ namespace Trestlebridge.Actions
                     int choice = Int32.Parse(Console.ReadLine());
                 farm.GrazingFields[choice - 1].AddResource(animal);
                 }
-                else { System.Console.WriteLine("This field is full"); }
+                else { System.Console.WriteLine("This field is full ");
+                    Console.WriteLine("Please select an available facility option");
+                    CreateFacility.CollectInput(farm);
+                };
             }
             Console.WriteLine();
             // How can I output the type of animal chosen here?
