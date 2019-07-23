@@ -5,7 +5,7 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Facilities
 {
-    public class NaturalField : IFacility<IGrazing>
+    public class NaturalField : IFacility<ICompost>
     {
         public double Capacity { get; } = 2;
         // public int AnimalCount
@@ -25,14 +25,14 @@ namespace Trestlebridge.Models.Facilities
                 return shortId;
             }
         }
-        private List<IGrazing> _animals = new List<IGrazing>()
+        private List<ICompost> _plants = new List<ICompost>()
         {
         };
-        public double AnimalCount
+        public double PlantCount
         {
             get
             {
-                return _animals.Count;
+                return _plants.Count;
             }
         }
         // public static double Capacity
@@ -42,19 +42,19 @@ namespace Trestlebridge.Models.Facilities
         //         return _capacity;
         //     }
         // }
-        public void AddResource(IGrazing animal)
+        public void AddResource(ICompost animal)
         {
             // Add animal to List or return user to facility list in terminal
             try
             {
-                _animals.Add(animal);
+                _plants.Add(animal);
             }
             catch
             {
                 Console.WriteLine("Press return to choose a different facility");
             }
         }
-        public void AddResource(List<IGrazing> animals)
+        public void AddResource(List<ICompost> animals)
         {
             // TODO: implement this...
             // throw new NotImplementedException();
@@ -63,8 +63,8 @@ namespace Trestlebridge.Models.Facilities
         {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
-            output.Append($"Natural field ID# {shortId} has {this._animals.Count} plants\n");
-            this._animals.ForEach(a => output.Append($"   {a}\n"));
+            output.Append($"Natural field ID# {shortId} has {this._plants.Count} plants\n");
+            this._plants.ForEach(a => output.Append($"   {a}\n"));
             return output.ToString();
         }
     }

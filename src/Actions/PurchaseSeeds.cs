@@ -24,10 +24,10 @@ namespace Trestlebridge.Actions
                 switch (Int32.Parse(choice))
                 {
                     case 1:
-                        ChoosePlowingField.CollectInput(farm, new Sunflower());
+                        ChooseFieldType.CollectInput(farm, new Sunflower());
                         break;
                     case 2:
-                        ChoosePlowingField.CollectInput(farm, new Wildflower());
+                        ChooseNaturalField.CollectInput(farm, new Wildflower());
                         break;
                     case 3:
                         ChoosePlowingField.CollectInput(farm, new Sesame());
@@ -48,7 +48,7 @@ namespace Trestlebridge.Actions
                     +-++-++-++-++-+");
                 Console.WriteLine();
                 Console.WriteLine("Please select an available stock option");
-                PurchaseStock.CollectInput(farm);
+                PurchaseSeeds.CollectInput(farm);
             }
         }
     }

@@ -8,13 +8,13 @@ namespace Trestlebridge.Actions
 {
     public class ChooseNaturalField
     {
-        public static void CollectInput(Farm farm, IGrazing animal)
+        public static void CollectInput(Farm farm, ICompost plant)
         {
             Console.Clear();
 
             for (int i = 0; i < farm.NaturalFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Natural Field {farm.NaturalFields[i].id} has {farm.NaturalFields[i].AnimalCount} plants");
+                Console.WriteLine($"{i + 1}. Natural Field {farm.NaturalFields[i].id} has {farm.NaturalFields[i].PlantCount} plants");
             }
 
             Console.WriteLine();
@@ -25,7 +25,7 @@ namespace Trestlebridge.Actions
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
-            farm.NaturalFields[choice - 1].AddResource(animal);
+            farm.NaturalFields[choice - 1].AddResource(plant);
 
 
             /*
