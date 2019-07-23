@@ -5,5 +5,7 @@ namespace Trestlebridge.Interfaces
         double FeedPerDay { get; set; }
 
         void Eat();
+
+
     }
 }

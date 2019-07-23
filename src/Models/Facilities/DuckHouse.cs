@@ -15,7 +15,7 @@ namespace Trestlebridge.Models.Facilities
                 return _animals.Count;
             }
         }
-        private int _capacity = 50;
+        private int _capacity = 3;
         private Guid _id = Guid.NewGuid();
 
         public string id
