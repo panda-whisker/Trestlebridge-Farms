@@ -14,7 +14,7 @@ namespace Trestlebridge.Actions
 
             for (int i = 0; i < farm.NaturalFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Natural Field {farm.NaturalFields[i].id} has {farm.NaturalFields[i].AnimalCount} animals");
+                Console.WriteLine($"{i + 1}. Natural Field {farm.NaturalFields[i].id} has {farm.NaturalFields[i].AnimalCount} plants");
             }
 
             Console.WriteLine();
