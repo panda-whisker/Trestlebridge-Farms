@@ -18,7 +18,23 @@ namespace Trestlebridge.Actions
             {
                 if (farm.GrazingFields[i].AnimalCount < farm.GrazingFields[i].Capacity)
                 {
+                    // Calculate Animal Count By Type
+                    var typesList = (from creature in farm.GrazingFields[i].AnimalsList
+                                     group creature by creature.Type into g
+                                     let count = g.Count()
+                                     select new { Value = g.Key, Count = count });
+
+
+
+                    // Print Message
                     Console.WriteLine($"{i + 1}. Grazing Field {farm.GrazingFields[i].id} has {farm.GrazingFields[i].AnimalCount} animals");
+                    if (farm.GrazingFields[i].AnimalCount > 0)
+                    {
+                        foreach (var type in typesList)
+                        {
+                            Console.WriteLine($"     {type.Value}:  {type.Count}");
+                        }
+                    }
                 }
                 else
                 {
