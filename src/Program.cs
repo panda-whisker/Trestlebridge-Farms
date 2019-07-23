@@ -58,7 +58,7 @@ namespace Trestlebridge
                 else if (option == "3")
                 {
                     DisplayBanner();
-                    PurchaseStock.CollectInput(Trestlebridge);
+                    PurchaseSeeds.CollectInput(Trestlebridge);
                     Console.WriteLine("Press return key to go back to main menu.");
                     Console.ReadLine();
                 }
