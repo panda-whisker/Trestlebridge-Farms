@@ -5,7 +5,7 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Facilities
 {
-    public class GrazingField : IFacility<IGrazing>
+    public class NaturalField : IFacility<IGrazing>
     {
         public double Capacity { get; } = 2;
         // public int AnimalCount
@@ -57,7 +57,7 @@ namespace Trestlebridge.Models.Facilities
         public void AddResource(List<IGrazing> animals)
         {
             // TODO: implement this...
-         // throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
         public override string ToString()
         {
