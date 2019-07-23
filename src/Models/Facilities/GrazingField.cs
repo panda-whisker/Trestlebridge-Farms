@@ -3,14 +3,12 @@ using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 
-
 namespace Trestlebridge.Models.Facilities
 {
     public class GrazingField : IFacility<IGrazing>
     {
-        private int _capacity = 50;
+        public double Capacity { get; } = 5;
         private Guid _id = Guid.NewGuid();
-
         public string id
         {
             get
@@ -19,20 +17,23 @@ namespace Trestlebridge.Models.Facilities
                 return shortId;
             }
         }
-
         private List<IGrazing> _animals = new List<IGrazing>()
         {
-
         };
-
-        public double Capacity
+        public double AnimalCount
         {
             get
             {
-                return _capacity;
+                return _animals.Count;
             }
         }
-
+        // public static double Capacity
+        // {
+        //     get
+        //     {
+        //         return _capacity;
+        //     }
+        // }
         public void AddResource(IGrazing animal)
         {
             // Add animal to List or return user to facility list in terminal
@@ -45,22 +46,17 @@ namespace Trestlebridge.Models.Facilities
                 Console.WriteLine("Press return to choose a different facility");
             }
         }
-
         public void AddResource(List<IGrazing> animals)
         {
             // TODO: implement this...
-
-            // throw new NotImplementedException();
+         // throw new NotImplementedException();
         }
-
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
-
             output.Append($"Grazing field ID# {shortId} has {this._animals.Count} animals\n");
             this._animals.ForEach(a => output.Append($"   {a}\n"));
-
             return output.ToString();
         }
     }
