@@ -7,7 +7,7 @@ namespace Trestlebridge
 {
     class Program
     {
-        static void DisplayBanner ()
+        static void DisplayBanner()
         {
             Console.Clear();
             Console.WriteLine();
@@ -23,7 +23,7 @@ namespace Trestlebridge
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White;
-			Console.BackgroundColor = ConsoleColor.DarkMagenta;
+            Console.BackgroundColor = ConsoleColor.DarkMagenta;
 
             Farm Trestlebridge = new Farm();
 
@@ -49,6 +49,13 @@ namespace Trestlebridge
                     Console.ReadLine();
                 }
                 else if (option == "2")
+                {
+                    DisplayBanner();
+                    PurchaseStock.CollectInput(Trestlebridge);
+                    Console.WriteLine("Press return key to go back to main menu.");
+                    Console.ReadLine();
+                }
+                else if (option == "3")
                 {
                     DisplayBanner();
                     PurchaseStock.CollectInput(Trestlebridge);
