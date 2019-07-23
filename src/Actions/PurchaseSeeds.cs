@@ -9,9 +9,9 @@ namespace Trestlebridge.Actions
     {
         public static void CollectInput(Farm farm)
         {
-            Console.WriteLine("1. Sunflower");
+            Console.WriteLine("1. Sesame");
             Console.WriteLine("2. Wildflower");
-            Console.WriteLine("3. Sesame");
+            Console.WriteLine("3. Sunflower");
 
             Console.WriteLine();
             Console.WriteLine("What are you buying today?");
@@ -24,16 +24,35 @@ namespace Trestlebridge.Actions
                 switch (Int32.Parse(choice))
                 {
                     case 1:
-                        ChooseFieldType.CollectInput(farm, new Sunflower());
+                        ChoosePlowingField.CollectInput(farm, new Sesame());
                         break;
                     case 2:
                         ChooseNaturalField.CollectInput(farm, new Wildflower());
                         break;
-                    case 3:
-                        ChoosePlowingField.CollectInput(farm, new Sesame());
-                        break;
-                    default:
-                        break;
+                             case 3:
+                   {
+                       Console.Clear();
+                       Console.WriteLine("1. Plowed Field");
+                       Console.WriteLine("2. Natural Field");
+                       Console.WriteLine();
+                       Console.WriteLine("Choose What type of Field to plant your Sunflowers in:");
+                       Console.Write("> ");
+                       string fieldType = Console.ReadLine();
+                       switch (Int32.Parse(fieldType))
+                       {
+                           case 1:
+                               ChooseNaturalField.CollectInput(farm, new Sunflower());
+                               break;
+                           case 2:
+                               ChoosePlowingField.CollectInput(farm, new Sunflower());
+                               break;
+                           default:
+                               break;
+                       }
+                       break;
+                   }
+               default:
+                   break;
                 }
             }
             catch (FormatException)
@@ -41,11 +60,22 @@ namespace Trestlebridge.Actions
                 Console.Clear();
                 Console.WriteLine();
                 Console.WriteLine(@"
-        +-++-++-++-++-++-++-++-++-++-++-++-++-+
-        |T||r||e||s||t||l||e||b||r||i||d||g||e|
-        +-++-++-++-++-++-++-++-++-++-++-++-++-+
-                    |F||a||r||m||s|
-                    +-++-++-++-++-+");
+                                   .-'`/\
+                                 // /' /\`\
+    Shucks that didn't work     ('//.-'/`-.;
+                                 \ \ / /-.
+              __.__.___..__._.___.\\ \\----,_ 
+           .:{@&#,&#@&,@&#&&,#&@#&@&\\` \-. .-'-. 
+        .:{@#@,#@&#,@#&&#,@&#&@&,&@#&&\\, -._,- \
+      .{#@#&@#@#&#&@&#@#@&#,@#@#&@&&#@#\ \// = \`=\__
+      `{#@,@#&@&,@&#@,#@&#@#&@#&@,&#@,#/\/ =`-. -_=__
+        `:{@#&@&#@&#@&#@,#&&#@&,@#/.'  / / /.-', /
+           `:{@#&,#&@#,@&#&@&,@&#/.-// //-'-_= ,/
+              `~`~~`~~~`~`~`~~`~( / , /__,___.-
+    Sorry for the corny joke...  \ \\/  
+                                  `\\\'
+
+");
                 Console.WriteLine();
                 Console.WriteLine("Please select an available stock option");
                 PurchaseSeeds.CollectInput(farm);
