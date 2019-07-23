@@ -7,7 +7,7 @@ namespace Trestlebridge.Models.Facilities
 {
     public class GrazingField : IFacility<IGrazing>
     {
-        public double Capacity { get; } = 2;
+        public double Capacity { get; } = 4;
         // public int AnimalCount
         // {
         //     get
@@ -25,9 +25,18 @@ namespace Trestlebridge.Models.Facilities
                 return shortId;
             }
         }
+        public string Type { get; }
         private List<IGrazing> _animals = new List<IGrazing>()
         {
         };
+
+        public List<IGrazing> AnimalsList
+        {
+            get
+            {
+                return _animals;
+            }
+        }
         public double AnimalCount
         {
             get
@@ -57,7 +66,7 @@ namespace Trestlebridge.Models.Facilities
         public void AddResource(List<IGrazing> animals)
         {
             // TODO: implement this...
-         // throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
         public override string ToString()
         {
