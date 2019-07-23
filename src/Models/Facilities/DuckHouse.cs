@@ -8,6 +8,13 @@ namespace Trestlebridge.Models.Facilities
 {
     public class DuckHouse : IFacility<IHousable>
     {
+        public int AnimalCount
+        {
+            get
+            {
+                return _animals.Count;
+            }
+        }
         private int _capacity = 50;
         private Guid _id = Guid.NewGuid();
 
