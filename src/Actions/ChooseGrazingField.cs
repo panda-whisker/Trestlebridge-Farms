@@ -5,6 +5,7 @@ using Trestlebridge.Models;
 using Trestlebridge.Models.Facilities;
 using Trestlebridge.Models.Animals;
 using System.Collections.Generic;
+
 namespace Trestlebridge.Actions
 {
     public class ChooseGrazingField
@@ -59,7 +60,7 @@ namespace Trestlebridge.Actions
                 }
                 else
                 {
-                    Console.WriteLine("This field is full ");
+                    // Console.WriteLine("This field is full ");
                     Console.WriteLine("Please select an available facility option");
                     CreateFacility.CollectInput(farm);
                 }
