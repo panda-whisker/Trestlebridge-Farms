@@ -7,7 +7,7 @@ namespace Trestlebridge.Models.Facilities
 {
     public class PlowingField : IFacility<ISeedProducing>
     {
-        public double Capacity { get; } = 3;
+        public double Capacity { get; } = 2;
         // public int AnimalCount
         // {
         //     get

@@ -28,6 +28,13 @@ namespace Trestlebridge.Models.Facilities
         private List<ICompost> _plants = new List<ICompost>()
         {
         };
+        public List<ICompost> PlantsList
+        {
+            get
+            {
+                return _plants;
+            }
+        }
         public double PlantCount
         {
             get
@@ -42,19 +49,19 @@ namespace Trestlebridge.Models.Facilities
         //         return _capacity;
         //     }
         // }
-        public void AddResource(ICompost animal)
+        public void AddResource(ICompost plant)
         {
             // Add animal to List or return user to facility list in terminal
             try
             {
-                _plants.Add(animal);
+                _plants.Add(plant);
             }
             catch
             {
                 Console.WriteLine("Press return to choose a different facility");
             }
         }
-        public void AddResource(List<ICompost> animals)
+        public void AddResource(List<ICompost> plants)
         {
             // TODO: implement this...
             // throw new NotImplementedException();
