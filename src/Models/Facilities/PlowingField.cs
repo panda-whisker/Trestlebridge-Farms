@@ -3,21 +3,20 @@ using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 
-
 namespace Trestlebridge.Models.Facilities
 {
     public class PlowingField : IFacility<ISeedProducing>
     {
-        public int SeedCount
-        {
-            get
-            {
-                return _seeds.Count;
-            }
-        }
+        public double Capacity { get; } = 3;
+        // public int AnimalCount
+        // {
+        //     get
+        //     {
+        //         return _animals.Count;
+        //     }
+        // }
         private int _capacity = 50;
         private Guid _id = Guid.NewGuid();
-
         public string id
         {
             get
@@ -26,49 +25,58 @@ namespace Trestlebridge.Models.Facilities
                 return shortId;
             }
         }
-
-        private List<ISeedProducing> _seeds = new List<ISeedProducing>()
+        public string Type { get; }
+        private List<ISeedProducing> _plant = new List<ISeedProducing>()
         {
-
         };
 
-        public double Capacity
+        public List<ISeedProducing> PlantsList
         {
             get
             {
-                return _capacity;
+                return _plant;
             }
         }
-
-        public void AddResource(ISeedProducing seed)
+        public double PlantCount
         {
-            // Add seed to List or return user to facility list in terminal
+            get
+            {
+                return _plant.Count;
+            }
+        }
+        // public static double Capacity
+        // {
+        //     get
+        //     {
+        //         return _capacity;
+        //     }
+        // }
+        public void AddResource(ISeedProducing plant)
+        {
+            // Add plant to List or return user to facility list in terminal
             try
             {
-                _seeds.Add(seed);
+                _plant.Add(plant);
             }
             catch
             {
                 Console.WriteLine("Press return to choose a different facility");
             }
         }
-
-        public void AddResource(List<ISeedProducing> seeds)
+        public void AddResource(List<ISeedProducing> plants)
         {
             // TODO: implement this...
-
             // throw new NotImplementedException();
         }
-
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
-
-            output.Append($"Plowing field ID# {shortId} has {this._seeds.Count} seeds\n");
-            this._seeds.ForEach(a => output.Append($"   {a}\n"));
-
+            output.Append($"Plowing field ID# {shortId} has {this._plant.Count} Plants\n");
+            this._plant.ForEach(a => output.Append($"   {a}\n"));
             return output.ToString();
         }
+
+
     }
 }
