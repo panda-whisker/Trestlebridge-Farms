@@ -3,14 +3,14 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Plants
 {
-    public class Wildflower : IResource, ISeedProducing
+    public class Wildflower : IResource, ICompost
     {
-        private int _seedsProduced = 40;
+         private double _compostProduced = 30.3;
         public string Type { get; } = "Wildflower";
 
-        public double Harvest()
+        public double Compost()
         {
-            return _seedsProduced;
+            return _compostProduced;
         }
 
         public override string ToString()

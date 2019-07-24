@@ -51,11 +51,12 @@ namespace Trestlebridge.Actions
                 Console.Clear();
                 Console.WriteLine();
                 Console.WriteLine(@"
-                +-++-++-++-++-++-++-++-++-++-++-++-++-+
-                |T||r||e||s||t||l||e||b||r||i||d||g||e|
-                +-++-++-++-++-++-++-++-++-++-++-++-++-+
-                            |F||a||r||m||s|
-                            +-++-++-++-++-+");
+        +-++-++-++-++-++-++-++-++-++-++-++-++-+          \|/  (__)    
+        |T||r||e||s||t||l||e||b||r||i||d||g||e|               (oo)-----/`
+        +-++-++-++-++-++-++-++-++-++-++-++-++-+    Moooooops- (__)   ||    
+                    |F||a||r||m||s|              That didn't    ||--w||    \|/
+                    +-++-++-++-++-+                  work   \|/
+");
                 Console.WriteLine();
                 Console.WriteLine("Please select an available facility option");
                 CreateFacility.CollectInput(farm);

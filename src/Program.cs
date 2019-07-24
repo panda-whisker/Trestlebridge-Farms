@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Trestlebridge.Actions;
 using Trestlebridge.Models;
 
@@ -12,18 +11,21 @@ namespace Trestlebridge
             Console.Clear();
             Console.WriteLine();
             Console.WriteLine(@"
-        +-++-++-++-++-++-++-++-++-++-++-++-++-+
-        |T||r||e||s||t||l||e||b||r||i||d||g||e|
-        +-++-++-++-++-++-++-++-++-++-++-++-++-+
-                    |F||a||r||m||s|
-                    +-++-++-++-++-+");
+        
+        +-++-++-++-++-++-++-++-++-++-++-++-++-+          \|/          (__)    
+        |T||r||e||s||t||l||e||b||r||i||d||g||e|               `\------(oo)
+        +-++-++-++-++-++-++-++-++-++-++-++-++-+                 ||    (__)
+                    |F||a||r||m||s|                             ||w--||     \|/
+                    +-++-++-++-++-+                         \|/
+
+        ");
             Console.WriteLine();
         }
 
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.BackgroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
 
             Farm Trestlebridge = new Farm();
 

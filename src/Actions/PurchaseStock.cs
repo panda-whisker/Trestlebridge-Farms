@@ -46,11 +46,24 @@ namespace Trestlebridge.Actions
                 Console.Clear();
                 Console.WriteLine();
                 Console.WriteLine(@"
-        +-++-++-++-++-++-++-++-++-++-++-++-++-+
-        |T||r||e||s||t||l||e||b||r||i||d||g||e|
-        +-++-++-++-++-++-++-++-++-++-++-++-++-+
-                    |F||a||r||m||s|
-                    +-++-++-++-++-+");
+                                
+ _  _ _  _   ____ _  _ /
+ |__| |--|   [__] |--|.    _
+                        -=(')
+                            ;;
+                            //
+                        //
+                        : '.---.__
+                        |  --_-_)__)
+                        `.____,'
+                            \  \
+                        ___\  \
+                        (       \
+                                \    - There's been an Ost-glitch
+                                /
+ 
+                                
+                                ");
                 Console.WriteLine();
                 Console.WriteLine("Please select an available stock option");
                 PurchaseStock.CollectInput(farm);
