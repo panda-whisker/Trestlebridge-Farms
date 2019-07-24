@@ -8,7 +8,7 @@ namespace Trestlebridge.Models.Animals
     {
 
         private Guid _id = Guid.NewGuid();
-        private double _meatProduced = 18.25;
+        private double _compost = 7.5;
 
         private string _shortId
         {
@@ -34,7 +34,7 @@ namespace Trestlebridge.Models.Animals
 
         public double Compost()
         {
-            throw new NotImplementedException();
+            return _compost;
         }
     }
 }

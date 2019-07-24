@@ -10,6 +10,8 @@ namespace Trestlebridge.Models.Animals
         private Guid _id = Guid.NewGuid();
         private double _meatProduced = 2.6;
 
+        public double EggProduced = 3;
+
         private string _shortId
         {
             get
