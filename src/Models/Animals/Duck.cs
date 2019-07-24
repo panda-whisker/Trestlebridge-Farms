@@ -8,8 +8,8 @@ namespace Trestlebridge.Models.Animals
     {
 
         private Guid _id = Guid.NewGuid();
-        private int _eggProduced = 6;
-        private double _featherProduced = 0.75;
+        public int EggProduced = 6;
+        public double FeatherProduced = 0.75;
 
 
 
@@ -27,13 +27,8 @@ namespace Trestlebridge.Models.Animals
         // Methods
         public void Eat()
         {
-            Console.WriteLine($"Duck {this._shortId} just ate {this.FeedPerDay}kg of grass");
+            Console.WriteLine($"Duck {this._shortId} just ate {this.FeedPerDay}kg of feed");
         }
-
-        // public double Butcher()
-        // {
-        //     return _feedProduced;
-        // }
 
         public override string ToString()
         {
