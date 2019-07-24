@@ -32,6 +32,8 @@ namespace Trestlebridge.Actions
                              case 3:
                    {
                        Console.Clear();
+                       Console.WriteLine();
+                       Console.WriteLine();
                        Console.WriteLine("1. Plowed Field");
                        Console.WriteLine("2. Natural Field");
                        Console.WriteLine();
@@ -41,10 +43,10 @@ namespace Trestlebridge.Actions
                        switch (Int32.Parse(fieldType))
                        {
                            case 1:
-                               ChooseNaturalField.CollectInput(farm, new Sunflower());
+                               ChoosePlowingField.CollectInput(farm, new Sunflower());
                                break;
                            case 2:
-                               ChoosePlowingField.CollectInput(farm, new Sunflower());
+                               ChooseNaturalField.CollectInput(farm, new Sunflower());
                                break;
                            default:
                                break;
