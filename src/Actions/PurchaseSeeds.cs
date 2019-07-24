@@ -3,6 +3,7 @@ using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Facilities;
 using Trestlebridge.Models.Plants;
+
 namespace Trestlebridge.Actions
 {
     public class PurchaseSeeds
@@ -24,14 +25,34 @@ namespace Trestlebridge.Actions
                 switch (Int32.Parse(choice))
                 {
                     case 1:
-                        ChoosePlowingField.CollectInput(farm, new Sesame());
-                        break;
+                        if(farm.PlowingFields.Count >= 1)
+                               {
+                               ChoosePlowingField.CollectInput(farm, new Sesame());
+                               }
+                               else
+                               {
+                               Console.Clear();
+                               System.Console.WriteLine("You haven't created a field for this flower yet.");    
+                               CreateFacility.CollectInput(farm); 
+                               }
+                               break;
                     case 2:
-                        ChooseNaturalField.CollectInput(farm, new Wildflower());
-                        break;
+                        if(farm.NaturalFields.Count >= 1)
+                               {
+                               ChooseNaturalField.CollectInput(farm, new Wildflower());
+                               }
+                               else
+                               {
+                               Console.Clear();
+                               System.Console.WriteLine("You haven't created a field for this flower yet.");    
+                               CreateFacility.CollectInput(farm); 
+                               }
+                               break;
                              case 3:
                    {
                        Console.Clear();
+                       Console.WriteLine();
+                       Console.WriteLine();
                        Console.WriteLine("1. Plowed Field");
                        Console.WriteLine("2. Natural Field");
                        Console.WriteLine();
@@ -41,10 +62,28 @@ namespace Trestlebridge.Actions
                        switch (Int32.Parse(fieldType))
                        {
                            case 1:
-                               ChooseNaturalField.CollectInput(farm, new Sunflower());
+                               if(farm.PlowingFields.Count >= 1)
+                               {
+                               ChoosePlowingField.CollectInput(farm, new Sunflower());
+                               }
+                               else
+                               {
+                               Console.Clear();
+                               System.Console.WriteLine("You haven't created a field for this flower yet.");    
+                               CreateFacility.CollectInput(farm); 
+                               }
                                break;
                            case 2:
-                               ChoosePlowingField.CollectInput(farm, new Sunflower());
+                               if(farm.NaturalFields.Count >= 1)
+                               {
+                               ChooseNaturalField.CollectInput(farm, new Sunflower());
+                               }
+                               else
+                               {
+                               Console.Clear();
+                               System.Console.WriteLine("You haven't created a field for this flower yet.");    
+                               CreateFacility.CollectInput(farm); 
+                               }
                                break;
                            default:
                                break;
@@ -77,7 +116,7 @@ namespace Trestlebridge.Actions
 
 ");
                 Console.WriteLine();
-                Console.WriteLine("Please select an available stock option");
+                Console.WriteLine("Please select an available seed option");
                 PurchaseSeeds.CollectInput(farm);
             }
         }
