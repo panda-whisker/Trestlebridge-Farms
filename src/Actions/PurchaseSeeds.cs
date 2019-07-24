@@ -3,6 +3,7 @@ using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Facilities;
 using Trestlebridge.Models.Plants;
+
 namespace Trestlebridge.Actions
 {
     public class PurchaseSeeds
@@ -24,11 +25,29 @@ namespace Trestlebridge.Actions
                 switch (Int32.Parse(choice))
                 {
                     case 1:
-                        ChoosePlowingField.CollectInput(farm, new Sesame());
-                        break;
+                        if(farm.PlowingFields.Count >= 1)
+                               {
+                               ChoosePlowingField.CollectInput(farm, new Sesame());
+                               }
+                               else
+                               {
+                               Console.Clear();
+                               System.Console.WriteLine("You haven't created a field for this flower yet.");    
+                               CreateFacility.CollectInput(farm); 
+                               }
+                               break;
                     case 2:
-                        ChooseNaturalField.CollectInput(farm, new Wildflower());
-                        break;
+                        if(farm.NaturalFields.Count >= 1)
+                               {
+                               ChooseNaturalField.CollectInput(farm, new Wildflower());
+                               }
+                               else
+                               {
+                               Console.Clear();
+                               System.Console.WriteLine("You haven't created a field for this flower yet.");    
+                               CreateFacility.CollectInput(farm); 
+                               }
+                               break;
                              case 3:
                    {
                        Console.Clear();
@@ -43,10 +62,28 @@ namespace Trestlebridge.Actions
                        switch (Int32.Parse(fieldType))
                        {
                            case 1:
+                               if(farm.PlowingFields.Count >= 1)
+                               {
                                ChoosePlowingField.CollectInput(farm, new Sunflower());
+                               }
+                               else
+                               {
+                               Console.Clear();
+                               System.Console.WriteLine("You haven't created a field for this flower yet.");    
+                               CreateFacility.CollectInput(farm); 
+                               }
                                break;
                            case 2:
+                               if(farm.NaturalFields.Count >= 1)
+                               {
                                ChooseNaturalField.CollectInput(farm, new Sunflower());
+                               }
+                               else
+                               {
+                               Console.Clear();
+                               System.Console.WriteLine("You haven't created a field for this flower yet.");    
+                               CreateFacility.CollectInput(farm); 
+                               }
                                break;
                            default:
                                break;
