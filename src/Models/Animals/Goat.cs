@@ -4,7 +4,7 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Animals
 {
-    public class Cow : IResource, IGrazing, IMeatProducing
+    public class Goat : IResource, IGrazing, ICompost
     {
 
         private Guid _id = Guid.NewGuid();
@@ -18,23 +18,23 @@ namespace Trestlebridge.Models.Animals
             }
         }
 
-        public double FeedPerDay { get; set; } = 5.4;
-        public string Type { get; } = "Cow";
+        public double FeedPerDay { get; set; } = 4.1;
+        public string Type { get; } = "Goat";
 
         // Methods
         public void Graze()
         {
-            Console.WriteLine($"Cow {this._shortId} just ate {this.FeedPerDay}kg of grass");
-        }
-
-        public double Butcher()
-        {
-            return _meatProduced;
+            Console.WriteLine($"Goat {this._shortId} just ate {this.FeedPerDay}kg of feed");
         }
 
         public override string ToString()
         {
-            return $"Cow {this._shortId}. Mooo!";
+            return $"Goat {this._shortId}. AHHHHHHHH!";
+        }
+
+        public double Compost()
+        {
+            throw new NotImplementedException();
         }
     }
 }
