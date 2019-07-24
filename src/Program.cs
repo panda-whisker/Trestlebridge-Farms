@@ -26,7 +26,7 @@ namespace Trestlebridge
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
 
             Farm Trestlebridge = new Farm();
 
