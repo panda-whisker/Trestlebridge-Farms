@@ -10,7 +10,7 @@ namespace Trestlebridge.Actions
 {
     public class ChoosePlowedField
     {
-        public static void CollectInput(Farm farm, ISeedProducing animal)
+        public static void CollectInput(Farm farm, ISeedProducing plant)
         {
             var fullPlowedFields = new List<int>();
             // Make a list of available fields
@@ -19,16 +19,16 @@ namespace Trestlebridge.Actions
             {
                 if (farm.PlowingFields[i].PlantCount < farm.PlowingFields[i].Capacity)
                 {
-                    // Calculate Animal Count By Type
-                    var typesList = (from creature in farm.PlowingFields[i].PlantsList
-                                     group creature by creature.Type into g
+                    // Calculate Plant Count By Type
+                    var typesList = (from p in farm.PlowingFields[i].PlantsList
+                                     group p by p.Type into g
                                      let count = g.Count()
                                      select new { Value = g.Key, Count = count });
 
 
 
                     // Print Message
-                    Console.WriteLine($"{i + 1}. Plowing Field {farm.PlowingFields[i].id} has {farm.PlowingFields[i].PlantCount} Plants");
+                    Console.WriteLine($"{i + 1}. Plowing Field {farm.PlowingFields[i].id} has {farm.PlowingFields[i].PlantCount} plant rows");
                     if (farm.PlowingFields[i].PlantCount > 0)
                     {
                         foreach (var type in typesList)
@@ -40,8 +40,6 @@ namespace Trestlebridge.Actions
                 else
                 {
                     fullPlowedFields.Add(i);
-                    // Console.WriteLine("Please select an available facility option");
-                    // CreateFacility.CollectInput(farm);
                 };
             }
             if (fullPlowedFields.Count == farm.PlowingFields.Count)
@@ -51,16 +49,15 @@ namespace Trestlebridge.Actions
             }
             else
             {
-                Console.WriteLine($"Place the animal where?");
+                Console.WriteLine($"Place the seeds where?");
                 Console.Write("> ");
                 int choice = Int32.Parse(Console.ReadLine());
                 if (farm.PlowingFields[choice - 1].PlantCount < farm.PlowingFields[choice - 1].Capacity)
                 {
-                    farm.PlowingFields[choice - 1].AddResource(animal);
+                    farm.PlowingFields[choice - 1].AddResource(plant);
                 }
                 else
                 {
-                    // Console.WriteLine("This field is full ");
                     Console.WriteLine("Please select an available facility option");
                     CreateFacility.CollectInput(farm);
                 }
