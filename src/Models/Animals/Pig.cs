@@ -18,7 +18,7 @@ namespace Trestlebridge.Models.Animals
             }
         }
 
-        public double FeedPerDay { get; set; } = 5.4;
+        public double FeedPerDay { get; set; } = 3.2;
         public string Type { get; } = "Pig";
 
         // Methods

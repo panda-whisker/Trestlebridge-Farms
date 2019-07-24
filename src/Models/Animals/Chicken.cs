@@ -10,6 +10,10 @@ namespace Trestlebridge.Models.Animals
         private Guid _id = Guid.NewGuid();
         private double _meatProduced = 7.25;
 
+        public double EggProduced { get; } = 7;
+
+        public double FeatherProduced { get; } = .5;
+
         private string _shortId
         {
             get
@@ -18,7 +22,7 @@ namespace Trestlebridge.Models.Animals
             }
         }
 
-        public double FeedPerDay { get; set; } = 5.4;
+        public double FeedPerDay { get; set; } = 0.9;
         public string Type { get; } = "Chicken";
 
         // Methods
