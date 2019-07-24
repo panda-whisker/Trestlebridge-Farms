@@ -116,7 +116,7 @@ namespace Trestlebridge.Actions
 
 ");
                 Console.WriteLine();
-                Console.WriteLine("Please select an available stock option");
+                Console.WriteLine("Please select an available seed option");
                 PurchaseSeeds.CollectInput(farm);
             }
         }
